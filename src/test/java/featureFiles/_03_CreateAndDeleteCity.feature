@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Cities
+Feature: Create and Delete Functionality for Cities
 
   Background:
     Given Navigate to basqar
@@ -13,7 +13,7 @@ Feature: Creat and Delete Functionality for Cities
 
     Then User should login successfully
 
-  Scenario: Creat and Delete City
+  Scenario: Create and Delete City
 
     When User click on the element in the leftNav class
       | setup      |
@@ -23,7 +23,7 @@ Feature: Creat and Delete Functionality for Cities
     And User click on the element in the dialog content class
       | addButton      |
       | country        |
-      | Group3Country5 |
+      | Group3CountryRandom |
 
     And User sending the keys in the dialog content class
       | name | Group3City5 |

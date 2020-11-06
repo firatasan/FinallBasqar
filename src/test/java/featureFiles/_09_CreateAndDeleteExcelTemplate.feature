@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Countries and Cities
+Feature: Create and Delete Functionality for SubjectCategories
 
   Background:
     Given Navigate to basqar
@@ -13,19 +13,18 @@ Feature: Creat and Delete Functionality for Countries and Cities
 
     Then User should login successfully
 
-  Scenario: Creat and Delete Country and City
+  Scenario:  Create, Edit and Delete Excel Templete
 
     When User click on the element in the leftNav class
-      | setup      |
-      | parameters |
-      | countries  |
+      | reports      |
+      | setupReports |
+      | excelTemplate |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3Country5 |
-      | code | 123            |
+      | name | Group3NewExcelTemplete |
 
     And User click on the element in the dialog content class
       | saveButton |
@@ -33,28 +32,14 @@ Feature: Creat and Delete Functionality for Countries and Cities
     Then User should see success/error message
       | successfully |
 
-    When User click on the element in the leftNav class
-      | cities |
-
-    And User click on the element in the dialog content class
-      | addButton      |
-      | country        |
-      | Group3Country5 |
-
-    And User sending the keys in the dialog content class
-      | name | Group3City5 |
-
-    And User click on the element in the dialog content class
-      | saveButton |
+    Then User edit the element with value
+    | Group3NewExcelTemplete | Group3EditedExcelTemplete |
 
     Then User should see success/error message
       | successfully |
-
-    When User click on the element in the leftNav class
-      | countries |
 
     When User delete value
-      | Group3Country5 |
+      | Group3EditedExcelTemplete |
 
     Then User should see success/error message
-      | error |
+      | successfully |

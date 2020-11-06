@@ -1,4 +1,4 @@
-Feature: Creat and Delete Functionality for Countries
+Feature: Create and Delete Functionality for Countries
 
   Background:
     Given Navigate to basqar
