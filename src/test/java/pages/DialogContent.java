@@ -14,65 +14,66 @@ public class DialogContent extends _Parent{
 
     public DialogContent() { PageFactory.initElements(driver, this); }
 
-    @FindBy(id = "mat-input-0")
-    private WebElement username;
-
-    @FindBy(id = "mat-input-1")
-    private WebElement password;
-
-    @FindBy(css = "button[aria-label='LOGIN']")
-    private WebElement loginButton;
-
-    @FindBy(linkText = "Got it!")
-    private WebElement gotItButton;
-
-    @FindAll({
-            @FindBy(linkText = "Got it!")
-    })
-    public List<WebElement> gotItBtns;
-
-    @FindBy (xpath = "//span[text()='Dashboard ']")
-    //@FindBy (linkText = "Dashboard")
-    private WebElement dashboard;
-
+    @FindBy(id = "mat-input-0")    private WebElement username;
+    @FindBy(id = "mat-input-1")    private WebElement password;
+    @FindBy(css = "button[aria-label='LOGIN']")    private WebElement loginButton;
+    @FindBy(linkText = "Got it!")    private WebElement gotItButton;
+    @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
+    @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
+    @FindBy (xpath = "//ms-add-button[contains(tooltip,TITLE)]")    private WebElement addButton;
+    @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
+    @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
+    @FindBy (css = "ms-save-button.ng-star-inserted")    private WebElement saveButton;
+    @FindBy (css = "div#toast-container")    private WebElement message;  //   div[role='allertdialog']
+    @FindBy (css = "ms-delete-button.ng-star-inserted")    private WebElement deleteButton;
+    @FindAll({ @FindBy (css = "ms-delete-button.ng-star-inserted") })  private List<WebElement> deleteButtonList;
+    @FindAll({ @FindBy (css = "ms-edit-button.ng-star-inserted") })  private List<WebElement> editButtonList;
+    @FindAll({ @FindBy (css = "tbody>tr>td:nth-child(2)") })  private List<WebElement> nameList;
+    @FindBy(css = "button[type='submit']")    private WebElement yesButton;
+    @FindBy(css = "mat-select[formcontrolname='id']")    private WebElement country;
+    @FindBy(css = "mat-option[role='option']")    private WebElement option;
+    @FindAll({ @FindBy(css = "mat-option[role='option']>span") })    private List<WebElement> optionsList;
 
     public void findElementAndClickFunction(String elementName) {
-        /**
-         * Buraya tıklanacak butonun adı gönderilecek
-         * Burada adından hangi eleman olduğu bulunuyor
-         * ve sonra tıklanıyor.
-         */
 
         switch (elementName) {
-            case "loginButton": myElement = loginButton; break;
-
-            case "gotItButton": if (gotItBtns.size() == 0) return; myElement = gotItButton; break;
-
+            case "loginButton": myElement = loginButton;break;
+            case "gotItButton":   if (gotItBtns.size() == 0) return; myElement = gotItButton; break;
+            case "addButton": myElement = addButton;break;
+            case "saveButton": myElement = saveButton;break;
+            case "deleteButton": myElement = deleteButton;break;
+            case "yesButton": myElement = yesButton;break;
+            case "country": myElement = country;break;
+            case "option": myElement = option;break;
+            case "randomCountry": myElement=optionsList.get((int)(Math.random()*200));break;
+            default:
+                for (int i = optionsList.size()-1; i >= 0 ; i--) {
+                    System.out.println("secilecek ulke:"+optionsList.get(i).getText());
+                    if(optionsList.get(i).getText().equalsIgnoreCase(elementName))
+                        myElement=optionsList.get(i);break;
+                }
         }
-
-        clickFunction(myElement);}
+        clickFunction(myElement);
+    }
 
     public void findElementAndSendKeysFunction(String elementName, String value) {
-        /**
-         * Buraya tıklanacak butonun adı gönderilecek
-         * Burada adından hangi eleman olduğu bulunuyor
-         * ve sonra tıklanıyor.
-         */
-
         switch (elementName) {
             case "username": myElement = username; break;
-
             case "password": myElement = password; break;
+            case "name": myElement = name; break;
+            case "code": myElement = code; break;
 
         }
+        sendKeysFunction(myElement, value);
+    }
 
-        sendKeysFunction(myElement, value);}
-
-    public void findElementAndFindVerifyContainsText(String elementName, String text) {
+    public void findElementAndFindVerifyContainsText(String elementName, String mesaj) {
         switch (elementName) {
             case "dashboard": myElement = dashboard;break;
+            case "success/error": myElement = message;break;
         }
-        verifyElementContainsText(myElement, text);
+        verifyElementContainsText(myElement, mesaj);
     }
+
 
 }
