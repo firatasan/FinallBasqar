@@ -25,7 +25,5 @@ public class _00_Hooks {
             e.printStackTrace();
         }
         Driver.quitDriver();
-
     }
-
 }
