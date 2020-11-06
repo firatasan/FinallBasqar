@@ -24,7 +24,7 @@ public class DialogContent extends _Parent{
     private WebElement loginButton;
 
     @FindBy(linkText = "Got it!")
-    private WebElement gotItBtn;
+    private WebElement gotItButton;
 
     @FindAll({
             @FindBy(linkText = "Got it!")
@@ -46,7 +46,7 @@ public class DialogContent extends _Parent{
         switch (elementName) {
             case "loginButton": myElement = loginButton; break;
 
-            case "gotItBtn": if (gotItBtns.size() == 0) return; myElement = gotItBtn; break;
+            case "gotItButton": if (gotItBtns.size() == 0) return; myElement = gotItButton; break;
 
         }
 

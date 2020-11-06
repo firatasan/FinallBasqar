@@ -10,6 +10,6 @@ Feature: Login Functionality
       | password | TechnoStudy123@      |
     And User click on the element in the dialog content class
       | loginButton |
-      | gotItBtn    |
+      | gotItButton    |
     #Login olduğunu doğrula
     Then User should login successfully

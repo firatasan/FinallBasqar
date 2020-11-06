@@ -1,26 +1,40 @@
-Feature: Create and Delete Functionality for Countries and Cities
+Feature: Creat and Delete Functionality for Countries
 
   Background:
     Given Navigate to basqar
+
     When User sending the keys in the dialog content class
       | username | daulet2030@gmail.com |
       | password | TechnoStudy123@      |
+
     And User click on the element in the dialog content class
       | loginButton |
-      | gotItBtn    |
+      | gotItButton |
+
     Then User should login successfully
 
-  Scenario: Create and delete a country
+  Scenario:  Creat and Delete Country
+
     When User click on the element in the leftNav class
       | setup      |
       | parameters |
       | countries  |
+
     And User click on the element in the dialog content class
-      | addButton      |
-    Then User sending the keys in the dialog content class
-      | name | Group3Country |
-      | code | 33333333      |
+      | addButton |
+
+    And User sending the keys in the dialog content class
+      | name | Group3Country5 |
+      | code | 123            |
+
     And User click on the element in the dialog content class
-      | saveButton      |
+      | saveButton |
+
+    Then User should see success/error message
+      | successfully |
+
+    When User delete value
+      | Group3Country5 |
+
     Then User should see success/error message
       | successfully |
