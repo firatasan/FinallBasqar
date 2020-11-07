@@ -33,6 +33,11 @@ public class DialogContent extends _Parent{
     @FindBy(css = "mat-select[formcontrolname='id']")    private WebElement country;
     @FindBy(css = "mat-option[role='option']")    private WebElement option;
     @FindAll({ @FindBy(css = "mat-option[role='option']>span") })    private List<WebElement> optionsList;
+    @FindBy (css = "#mat-chip-list-input-0")    private WebElement userType;
+    @FindBy (css = "input[data-placeholder='Description']")    private WebElement discription;
+    @FindBy (css = "input[data-placeholder='Variable']")    private WebElement variable;
+    @FindBy (css = "input[data-placeholder='Priority']")    private WebElement priority;
+    @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -45,13 +50,10 @@ public class DialogContent extends _Parent{
             case "yesButton": myElement = yesButton;break;
             case "country": myElement = country;break;
             case "option": myElement = option;break;
-            case "randomCountry": myElement=optionsList.get((int)(Math.random()*200));break;
+            case "userType": myElement = userType; break;
+          //  case "randomCountry": myElement=optionsList.get((int)(Math.random()*200));break;
             default:
-                for (int i = optionsList.size()-1; i >= 0 ; i--) {
-                    System.out.println("secilecek ulke:"+optionsList.get(i).getText());
-                    if(optionsList.get(i).getText().equalsIgnoreCase(elementName))
-                        myElement=optionsList.get(i);break;
-                }
+                myElement=optionsList.get(randomSelect(optionsList)); break;
         }
         clickFunction(myElement);
     }
@@ -62,6 +64,10 @@ public class DialogContent extends _Parent{
             case "password": myElement = password; break;
             case "name": myElement = name; break;
             case "code": myElement = code; break;
+            case "discription": myElement = discription; break;
+            case "variable": myElement = variable; break;
+            case "priority": myElement = priority; break;
+            case "amount": myElement = amount; break;
 
         }
         sendKeysFunction(myElement, value);
