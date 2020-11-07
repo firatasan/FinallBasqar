@@ -18,7 +18,7 @@ Feature: Create and Delete Functionality for Subject
     When User click on the element in the leftNav class
       | education      |
       | setupEducation |
-      | subject        |
+      | subjects       |
 
     And User click on the element in the dialog content class
       | addButton |

@@ -34,7 +34,7 @@ Feature: Create and Delete Functionality for Countries and Cities
       | successfully |
 
     When User click on the element in the leftNav class
-      | subject |
+      | subjects |
 
     And User click on the element in the dialog content class
       | addButton |
