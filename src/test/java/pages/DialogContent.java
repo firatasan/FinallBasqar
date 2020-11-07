@@ -38,6 +38,11 @@ public class DialogContent extends _Parent{
     @FindBy (css = "input[data-placeholder='Variable']")    private WebElement variable;
     @FindBy (css = "input[data-placeholder='Priority']")    private WebElement priority;
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
+    @FindBy (css = "input[data-placeholder='Amount']")    private WebElement nameConstans;
+    @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
+    @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
+    @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
+
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -68,6 +73,10 @@ public class DialogContent extends _Parent{
             case "variable": myElement = variable; break;
             case "priority": myElement = priority; break;
             case "amount": myElement = amount; break;
+            case "nameConstans": myElement = nameConstans; break;
+            case "validFrom": myElement = validFrom; break;
+            case "key": myElement = key; break;
+            case "valueConstans": myElement = valueConstans; break;
 
         }
         sendKeysFunction(myElement, value);
