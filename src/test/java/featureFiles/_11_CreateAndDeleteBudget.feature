@@ -19,12 +19,30 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | budget |
       | budgetAccounts        |
 
+#    TODO BURADAN SONRASI EKSIK
+
+
+
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
       | code | asd |
       | name | asd |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     And User click on the element in the dialog content class
       | category |
