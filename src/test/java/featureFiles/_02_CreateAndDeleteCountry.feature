@@ -13,7 +13,7 @@ Feature: Create and Delete Functionality for Countries
 
     Then User should login successfully
 
-  Scenario:  Creat and Delete Country
+  Scenario:  Create and Delete Country
 
     When User click on the element in the leftNav class
       | setup      |

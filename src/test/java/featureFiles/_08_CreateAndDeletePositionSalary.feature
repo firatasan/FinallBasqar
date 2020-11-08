@@ -16,15 +16,15 @@ Feature: Create and Delete Functionality for SubjectCategories
   Scenario:  Create, Edit and Delete Position Salary
 
     When User click on the element in the leftNav class
-      | humanResources      |
-      | setupHR |
+      | humanResources |
+      | setupHR        |
       | positionSalary |
 
     And User click on the element in the dialog content class
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name | Group3NewPositionSalary |
+      | namePositionSalary | Group3NewPositionSalary |
 
     And User click on the element in the dialog content class
       | saveButton |
@@ -33,7 +33,7 @@ Feature: Create and Delete Functionality for SubjectCategories
       | successfully |
 
     Then User edit the element with value
-    | Group3NewPositionSalary | editedPositionSalary |
+      | Group3NewPositionSalary | editedPositionSalary |
 
     When User delete value
       | editedPositionSalary |
@@ -45,7 +45,7 @@ Feature: Create and Delete Functionality for SubjectCategories
   Scenario:  Create and Delete Positions
 
     When User click on the element in the leftNav class
-      | positions      |
+      | positions |
 
     And User click on the element in the dialog content class
       | addButton |
