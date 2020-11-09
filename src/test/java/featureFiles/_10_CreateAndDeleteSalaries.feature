@@ -103,11 +103,11 @@ Feature: Create and Delete Functionality for SubjectCategories
       | addButton |
 
     And User sending the keys in the dialog content class
-      | name      | isim |
+      | nameConstans  | isim       |
 #      TODO Alttaki tarihe çift tıklamak gerekiyor.
-      | validform | 11/10/2011   |
-      | key       | a12          |
-      | value     | 100          |
+      | validform     | 11/10/2011 |
+      | key           | a12        |
+      | valueConstans | 100        |
 
     And User click on the element in the dialog content class
       | saveButton |

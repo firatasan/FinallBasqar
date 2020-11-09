@@ -43,6 +43,7 @@ public class DialogContent extends _Parent{
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
     @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key2;
+    @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key3;
 
 
     public void findElementAndClickFunction(String elementName) {
