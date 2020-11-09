@@ -42,6 +42,8 @@ public class DialogContent extends _Parent{
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
     @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
     @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
+    @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
+    @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
 
 
 
@@ -57,6 +59,7 @@ public class DialogContent extends _Parent{
             case "country": myElement = country;break;
             case "option": myElement = option;break;
             case "userType": myElement = userType; break;
+            case "namePositionSalary": myElement = namePositionSalary; break;
           //  case "randomCountry": myElement=optionsList.get((int)(Math.random()*200));break;
             default:
                 myElement=optionsList.get(randomSelect(optionsList)); break;
