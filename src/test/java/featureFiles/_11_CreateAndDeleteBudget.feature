@@ -30,7 +30,6 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | code | asd |
       | name | asd |
 
-
     And User click on the element in the dialog content class
       | type |
       | Group |
