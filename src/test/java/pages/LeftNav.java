@@ -34,7 +34,7 @@ public class LeftNav extends _Parent {
     @FindBy(linkText = "Salary Constants") private WebElement salaryConstants;
     @FindBy(linkText = "Budget") private WebElement budget;
     @FindBy(linkText = "Budget Accounts") private WebElement budgetAccounts;
-    @FindBy(xpath = "(//span[text()='Setup'])[8]") private WebElement setupbudget;
+    @FindBy(xpath = "(//span[text()='Setup'])[6]") private WebElement setupbudget;
     @FindBy(linkText = "Cost Centers") private WebElement costCenters;
 
 

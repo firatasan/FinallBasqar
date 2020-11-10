@@ -74,9 +74,7 @@ public class _Parent {
         Assert.assertTrue(actualText.toLowerCase().contains(expectedText.toLowerCase()));
     }
 
-    public int randomSelect(List<WebElement> list) {
-        int randomSayi = (int) Math.random() * list.size();
-
-        return randomSayi;
+    public WebElement randomSelectFromList(List<WebElement> elementsList) {
+        return elementsList.get((int)(Math.random() * elementsList.size()));
     }
 }

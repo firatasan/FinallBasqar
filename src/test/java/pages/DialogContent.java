@@ -30,7 +30,7 @@ public class DialogContent extends _Parent{
     @FindAll({ @FindBy (css = "tbody>tr>td:nth-child(2)") })  private List<WebElement> nameList;
     @FindBy(css = "button[type='submit']")    private WebElement yesButton;
     @FindBy(css = "mat-select[formcontrolname='id']")    private WebElement country;
-    @FindBy(css = "mat-option[role='option']")    private WebElement option;
+    // @FindBy(css = "mat-option[role='option']")    private WebElement option;
     @FindAll({ @FindBy(css = "mat-option[role='option']>span") })    private List<WebElement> optionsList;
     @FindBy (css = "#mat-chip-list-input-0")    private WebElement userType;
     @FindBy (css = "input[data-placeholder='Description']")    private WebElement discription;
@@ -68,7 +68,7 @@ public class DialogContent extends _Parent{
             case "deleteButton": myElement = deleteButton;break;
             case "yesButton": myElement = yesButton;break;
             case "country": myElement = country;break;
-            case "option": myElement = option;break;
+           // case "option": myElement = option;break;
             case "userType": myElement = userType; break;
             case "namePositionSalary": myElement = namePositionSalary; break;
             case "category": myElement = category; break;
@@ -78,9 +78,10 @@ public class DialogContent extends _Parent{
             case "integrationCodes": myElement = integrationCodes; break;
             case "currency": myElement = currency; break;
             case "expenseAccPrefixes": myElement = expenseAccPrefixes; break;
-          //  case "randomCountry": myElement=optionsList.get((int)(Math.random()*200));break;
-            default:
-                myElement=optionsList.get(randomSelect(optionsList)); break;
+            case "randomSelect": myElement=randomSelectFromList(optionsList);break;
+
+
+
         }
         clickFunction(myElement);
     }

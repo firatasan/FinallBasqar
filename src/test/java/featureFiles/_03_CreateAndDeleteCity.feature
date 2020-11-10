@@ -23,7 +23,7 @@ Feature: Create and Delete Functionality for Cities
     And User click on the element in the dialog content class
       | addButton      |
       | country        |
-      | Group3CountryRandom |
+      | randomSelect |
 
     And User sending the keys in the dialog content class
       | name | Group3City5 |

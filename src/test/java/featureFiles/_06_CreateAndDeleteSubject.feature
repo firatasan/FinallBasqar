@@ -29,7 +29,7 @@ Feature: Create and Delete Functionality for Subject
 
     And User click on the element in the dialog content class
       | subjectCategory |
-      | categoryRandom  |
+      | randomSelect  |
       | saveButton      |
 
     Then User should see success/error message
