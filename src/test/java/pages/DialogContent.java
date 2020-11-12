@@ -39,8 +39,8 @@ public class DialogContent extends _Parent{
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement nameConstans;
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
-    @FindBy (css = "ms-text-field[formcontrolname='key']>input")    private WebElement key;
-    @FindBy (css = "ms-integer-field[formcontrolname='value']>input")    private WebElement valueConstans;
+    @FindBy (xpath = "(//input[@type='text'])[1]")    private WebElement key;
+    @FindBy (xpath = "(//input[@type='text'])[2]")    private WebElement valueConstans;
     @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
     @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
@@ -55,6 +55,7 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "(//button[@matbadgecolor='accent'])[2]") private WebElement addContraAcc;
     @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
+    @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
 
 
 
@@ -79,7 +80,14 @@ public class DialogContent extends _Parent{
             case "currency": myElement = currency; break;
             case "expenseAccPrefixes": myElement = expenseAccPrefixes; break;
             case "randomSelect": myElement=randomSelectFromList(optionsList);break;
-
+            case "addButtonCost": myElement = addButtonCost; break;
+            default:
+                for (int i = 0; i < optionsList.size() ; i++) {
+                    if(optionsList.get(i).getText().equalsIgnoreCase(elementName)) {
+                        System.out.println("selected option:" + optionsList.get(i).getText());
+                        myElement = optionsList.get(i);break;
+                    }
+                }
 
 
         }
@@ -101,7 +109,7 @@ public class DialogContent extends _Parent{
             case "key": myElement = key; break;
             case "valueConstans": myElement = valueConstans; break;
             case "orderNo": myElement = orderNo; break;
-            //TODO not: order no eşsiz olmalı, listeli bulunmamalı
+
 
         }
         sendKeysFunction(myElement, value);
