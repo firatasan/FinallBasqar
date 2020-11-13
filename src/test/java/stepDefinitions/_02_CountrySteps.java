@@ -44,5 +44,11 @@ public class _02_CountrySteps {
         dialogContent.findElementAndClickFunction("yesButton");
 
     }
+
+    @Then("^User edit \"([^\"]*)\"$")
+    public void userEdit(String value) {
+
+        dialogContent.editFunction(value);
+    }
 }
 

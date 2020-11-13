@@ -30,8 +30,7 @@ Feature: Create and Delete Functionality for Countries and Cities
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | subjects |
@@ -46,16 +45,26 @@ Feature: Create and Delete Functionality for Countries and Cities
     And User click on the element in the dialog content class
       | subjectCategory |
       | MySubjectCat3   |
+      | styleSubjects   |
+      | randomSelect    |
       | saveButton      |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | subjectCategories |
 
-    When User delete value
-      | MySubjectCat3 |
+    When User delete "MySubjectCat3"
 
-    Then User should see success/error message
-      | error |
+    Then User should see "error" message
+
+
+#    ilave kısım
+    Then User click on the element in the leftNav class
+      | subjects |
+    When User delete "Group3Subject"
+    Then User should see "successfully" message
+    Then User click on the element in the leftNav class
+      | subjectCategories |
+    When User delete "MySubjectCat3"
+    Then User should see "successfully" message

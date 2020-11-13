@@ -22,6 +22,7 @@ public class LeftNav extends _Parent {
     @FindBy(linkText = "Education") private WebElement education;
     @FindBy(xpath = "(//span[text()='Setup'])[5]") private WebElement setupEducation;
     @FindBy(css = "a[href='/subject-categories/list']") private WebElement subjectCategories;   //   linkText = "Subject Categories"
+//    @FindBy(linkText = "Subject Categories") private WebElement subjectCategories;   //   linkText = "Subject Categories"
     @FindBy(linkText = "Subjects") private WebElement subjects;
 
     @FindBy(linkText = "Human Resources") private WebElement humanResources;

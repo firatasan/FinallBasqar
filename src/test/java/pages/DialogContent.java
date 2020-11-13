@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DialogContent extends _Parent{
@@ -21,10 +20,11 @@ public class DialogContent extends _Parent{
     @FindBy(linkText = "Got it!")    private WebElement gotItButton;
     @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
     @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
-    @FindBy (xpath = "//ms-add-button[contains(tooltip,TITLE)]")    private WebElement addButton;
+    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")    private WebElement addButton;
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
-    @FindBy (css = "ms-save-button.ng-star-inserted")    private WebElement saveButton;
+    //@FindBy (css = "ms-save-button.ng-star-inserted")    private WebElement saveButton;
+    @FindBy(xpath = "//ms-save-button//button")    private WebElement saveButton;
     @FindBy (css = "div#toast-container")    private WebElement message;  //   div[role='allertdialog']
     @FindAll({ @FindBy(css = "div#toast-container") })    private List<WebElement> messageList;
     @FindBy (css = "ms-delete-button.ng-star-inserted")    private WebElement deleteButton;
@@ -36,11 +36,11 @@ public class DialogContent extends _Parent{
     // @FindBy(css = "mat-option[role='option']")    private WebElement option;
     @FindAll({ @FindBy(css = "mat-option[role='option']>span") })    private List<WebElement> optionsList;
     @FindBy (css = "#mat-chip-list-input-0")    private WebElement userType;
-    @FindBy (css = "input[data-placeholder='Description']")    private WebElement discription;
+    @FindBy (css = "input[data-placeholder='Description']")    private WebElement description;
     @FindBy (css = "input[data-placeholder='Variable']")    private WebElement variable;
     @FindBy (css = "input[data-placeholder='Priority']")    private WebElement priority;
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
-    @FindBy (css = "input[data-placeholder='Amount']")    private WebElement nameConstans;
+    @FindBy (css = "input[formcontrolname='name']")    private WebElement nameConstans;
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
     @FindBy (xpath = "(//input[@type='text'])[1]")    private WebElement key;
     @FindBy (xpath = "(//input[@type='text'])[2]")    private WebElement valueConstans;
@@ -50,7 +50,8 @@ public class DialogContent extends _Parent{
 
     //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
     // Yeni dropdown için aşağıdaki locator geliyor.
-    @FindBy (xpath = "//span[text()='Subcategory']") private WebElement subcategory;
+    //@FindBy (xpath = "//span[text()='Subcategory']") private WebElement subjectCategory;
+    @FindBy (css = "mat-select[formcontrolname='id']") private WebElement subjectCategory;
     @FindBy (xpath = "//span[text()='Type']") private WebElement type;
     @FindBy (xpath = "//span[text()='Balance Type']") private WebElement balanceType;
     @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
@@ -60,6 +61,7 @@ public class DialogContent extends _Parent{
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
     @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
     @FindBy (css = "mat-select[formcontrolname='value']") private WebElement styleSubjects;
+    @FindBy(css = "ms-text-field[formcontrolname='shortName']>input")    private WebElement shortName;
 
 
 
@@ -75,9 +77,8 @@ public class DialogContent extends _Parent{
             case "country": myElement = country;break;
            // case "option": myElement = option;break;
             case "userType": myElement = userType; break;
-            case "namePositionSalary": myElement = namePositionSalary; break;
             case "category": myElement = category; break;
-            case "subcategory": myElement = subcategory; break;
+            case "subjectCategory": myElement = subjectCategory; break;
             case "type": myElement = type; break;
             case "balanceType": myElement = balanceType; break;
             case "integrationCodes": myElement = integrationCodes; break;
@@ -89,7 +90,7 @@ public class DialogContent extends _Parent{
 
 
             default:
-                for (int i = 0; i < optionsList.size() ; i++) {
+                for (int i = optionsList.size()-1; i >=0  ; i--) {
                     if(optionsList.get(i).getText().equalsIgnoreCase(elementName)) {
                         System.out.println("selected option:" + optionsList.get(i).getText());
                         myElement = optionsList.get(i);break;
@@ -107,7 +108,7 @@ public class DialogContent extends _Parent{
             case "password": myElement = password; break;
             case "name": myElement = name; break;
             case "code": myElement = code; break;
-            case "discription": myElement = discription; break;
+            case "discription": myElement = description; break;
             case "variable": myElement = variable; break;
             case "priority": myElement = priority; break;
             case "amount": myElement = amount; break;
@@ -116,6 +117,8 @@ public class DialogContent extends _Parent{
             case "key": myElement = key; break;
             case "valueConstans": myElement = valueConstans; break;
             case "orderNo": myElement = orderNo; break;
+            case "shortName": myElement = shortName; break;
+            case "namePositionSalary": myElement = namePositionSalary; break;
 
 
         }
@@ -132,22 +135,34 @@ public class DialogContent extends _Parent{
 
     public void deleteFunction(String value){
 
-
         if (messageList.size() > 0) {
 //            if (message.isDisplayed())
                 wait.until(ExpectedConditions.invisibilityOfAllElements(message));
         }
 
-
         for (int i = 0; i < nameList.size(); i++) {
 
             if (nameList.get(i).getText().equalsIgnoreCase(value)) {
                 clickFunction(deleteButtonList.get(i));
+                break;
             }
+        }
+    }
 
+    public void editFunction(String value){
 
+        if (messageList.size() > 0) {
+//            if (message.isDisplayed())
+            wait.until(ExpectedConditions.invisibilityOfAllElements(message));
         }
 
+        for (int i = 0; i < nameList.size(); i++) {
+
+            if (nameList.get(i).getText().equalsIgnoreCase(value)) {
+                clickFunction(editButtonList.get(i));
+                break;
+            }
+        }
     }
 
 

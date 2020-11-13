@@ -13,7 +13,7 @@ Feature: Create and Delete Functionality for Countries and Cities
 
     Then User should login successfully
 
-  Scenario: Creat and Delete Country and City
+  Scenario: Create and Delete Country and City
 
     When User click on the element in the leftNav class
       | setup      |
@@ -30,8 +30,7 @@ Feature: Create and Delete Functionality for Countries and Cities
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | cities |
@@ -47,14 +46,11 @@ Feature: Create and Delete Functionality for Countries and Cities
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | countries |
 
-    When User delete value
-      | Group3Country5 |
+    When User delete "Group3Country5"
 
-    Then User should see success/error message
-      | error |
+    Then User should see "error" message

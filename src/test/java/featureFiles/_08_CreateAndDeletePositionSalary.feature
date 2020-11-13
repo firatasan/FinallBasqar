@@ -29,45 +29,55 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-      | Group3NewPositionSalary | editedPositionSalary |
+    Then User edit "Group3NewPositionSalary"
 
-    When User delete value
-      | editedPositionSalary |
+    And User sending the keys in the dialog content class
+      | namePositionSalary | editedPositionSalary |
 
-    Then User should see success/error message
-      | successfully |
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
+
+    When User delete "editedPositionSalary"
+
+    Then User should see "successfully" message
 
 
   Scenario:  Create and Delete Positions
 
     When User click on the element in the leftNav class
+      | humanResources |
+      | setupHR        |
       | positions |
 
     And User click on the element in the dialog content class
       | addButton |
 
-
     And User sending the keys in the dialog content class
       | name | Group3NewPosition |
+      | shortName | G3NP         |
 
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-      | Group3NewPosition | editedPosition |
+    Then User edit "Group3NewPosition"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | name | editedPosition |
+      | shortName | G3NnewP         |
 
-    When User delete value
-      | editedPosition |
+    And User click on the element in the dialog content class
+      | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
+
+    When User delete "editedPosition"
+
+    Then User should see "successfully" message
+
+

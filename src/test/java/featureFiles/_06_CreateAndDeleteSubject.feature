@@ -29,14 +29,11 @@ Feature: Create and Delete Functionality for Subject
 
     And User click on the element in the dialog content class
       | subjectCategory |
-      | randomSelect  |
+      | randomSelect    |
       | saveButton      |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    When User delete value
-      | Group3Subject |
+    When User delete "Group3Subject"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message

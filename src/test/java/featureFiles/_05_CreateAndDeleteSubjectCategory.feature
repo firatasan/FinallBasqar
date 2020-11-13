@@ -30,11 +30,8 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    When User delete value
-      | Group3NewCategories |
+    When User delete "Group3NewCategories"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
