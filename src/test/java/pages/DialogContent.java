@@ -56,7 +56,7 @@ public class DialogContent extends _Parent{
     @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
     @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
-    @FindBy (xpath = "//span[text()='Add']") private WebElement styleSubjects;
+    @FindBy (css = "mat-select[formcontrolname='value']") private WebElement styleSubjects;
 
 
 
