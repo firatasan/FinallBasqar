@@ -54,3 +54,15 @@ Feature: Create and Delete Functionality for Countries and Cities
     When User delete "Group3Country5"
 
     Then User should see "error" message
+
+
+      #    ilave kısım
+    Then User click on the element in the leftNav class
+      | cities |
+    When User delete "Group3City5"
+    Then User should see "successfully" message
+    Then User click on the element in the leftNav class
+      | countries |
+    When User delete "Group3Country5"
+    Then User should see "successfully" message
+
