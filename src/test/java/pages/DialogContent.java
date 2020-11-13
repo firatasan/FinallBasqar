@@ -4,7 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DialogContent extends _Parent{
@@ -24,6 +26,7 @@ public class DialogContent extends _Parent{
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
     @FindBy (css = "ms-save-button.ng-star-inserted")    private WebElement saveButton;
     @FindBy (css = "div#toast-container")    private WebElement message;  //   div[role='allertdialog']
+    @FindAll({ @FindBy(css = "div#toast-container") })    private List<WebElement> messageList;
     @FindBy (css = "ms-delete-button.ng-star-inserted")    private WebElement deleteButton;
     @FindAll({ @FindBy (css = "ms-delete-button.ng-star-inserted") })  private List<WebElement> deleteButtonList;
     @FindAll({ @FindBy (css = "ms-edit-button.ng-star-inserted") })  private List<WebElement> editButtonList;
@@ -125,6 +128,26 @@ public class DialogContent extends _Parent{
             case "success/error": myElement = message;break;
         }
         verifyElementContainsText(myElement, mesaj);
+    }
+
+    public void deleteFunction(String value){
+
+
+        if (messageList.size() > 0) {
+//            if (message.isDisplayed())
+                wait.until(ExpectedConditions.invisibilityOfAllElements(message));
+        }
+
+
+        for (int i = 0; i < nameList.size(); i++) {
+
+            if (nameList.get(i).getText().equalsIgnoreCase(value)) {
+                clickFunction(deleteButtonList.get(i));
+            }
+
+
+        }
+
     }
 
 

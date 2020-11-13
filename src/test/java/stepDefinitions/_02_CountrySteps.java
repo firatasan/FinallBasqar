@@ -4,9 +4,13 @@ import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.DialogContent;
 import pages.LeftNav;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class _02_CountrySteps {
@@ -36,6 +40,8 @@ public class _02_CountrySteps {
     @When("^User delete \"([^\"]*)\"$")
     public void userDelete(String value) {
 
+        dialogContent.deleteFunction(value);
+        dialogContent.findElementAndClickFunction("yesButton");
 
     }
 }
