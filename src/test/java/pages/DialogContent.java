@@ -56,6 +56,7 @@ public class DialogContent extends _Parent{
     @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
     @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
+    @FindBy (xpath = "//span[text()='Add']") private WebElement styleSubjects;
 
 
 
@@ -81,6 +82,9 @@ public class DialogContent extends _Parent{
             case "expenseAccPrefixes": myElement = expenseAccPrefixes; break;
             case "randomSelect": myElement=randomSelectFromList(optionsList);break;
             case "addButtonCost": myElement = addButtonCost; break;
+            case "styleSubjects": myElement = styleSubjects; break;
+
+
             default:
                 for (int i = 0; i < optionsList.size() ; i++) {
                     if(optionsList.get(i).getText().equalsIgnoreCase(elementName)) {
