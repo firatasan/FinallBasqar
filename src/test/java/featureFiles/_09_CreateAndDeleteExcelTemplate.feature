@@ -16,8 +16,8 @@ Feature: Create and Delete Functionality for SubjectCategories
   Scenario:  Create, Edit and Delete Excel Templete
 
     When User click on the element in the leftNav class
-      | reports      |
-      | setupReports |
+      | reports       |
+      | setupReports  |
       | excelTemplate |
 
     And User click on the element in the dialog content class
@@ -29,17 +29,12 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-    | Group3NewExcelTemplete | Group3EditedExcelTemplete |
+    Then User edit "Group3NewExcelTemplete"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    When User delete value
-      | Group3EditedExcelTemplete |
+    When User delete "Group3EditedExcelTemplete"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
