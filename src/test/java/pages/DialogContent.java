@@ -21,7 +21,7 @@ public class DialogContent extends _Parent{
     @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
     @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
    // @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")    private WebElement addButton;
-    @FindBy (xpath = " //ms-add-button[contains(tooltip,TITLE)]")    private WebElement addButton;
+    @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]//button")    private WebElement addButton;
 
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
@@ -49,6 +49,8 @@ public class DialogContent extends _Parent{
     @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
     @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
+    @FindBy (css = " button[aria-label='Close dialog']")    private WebElement closeDialog;
+
 
     //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
     // Yeni dropdown için aşağıdaki locator geliyor.
@@ -89,6 +91,8 @@ public class DialogContent extends _Parent{
             case "randomSelect": myElement=randomSelectFromList(optionsList);break;
             case "addButtonCost": myElement = addButtonCost; break;
             case "styleSubjects": myElement = styleSubjects; break;
+            case "closeDialog": myElement = closeDialog; break;
+
 
 
             default:

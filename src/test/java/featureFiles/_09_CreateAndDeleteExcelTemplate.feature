@@ -31,9 +31,21 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     Then User should see "successfully" message
 
+    And User click on the element in the dialog content class
+      | closeDialog |
+
     Then User edit "Group3NewExcelTemplete"
 
+    And User sending the keys in the dialog content class
+      | name | Group3EditedExcelTemplete |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
     Then User should see "successfully" message
+
+    And User click on the element in the dialog content class
+      | closeDialog |
 
     When User delete "Group3EditedExcelTemplete"
 
