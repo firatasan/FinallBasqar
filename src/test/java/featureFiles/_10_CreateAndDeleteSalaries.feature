@@ -13,7 +13,7 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     Then User should login successfully
 
-  Scenario:  Create, Edit and Delete Position Salary
+  Scenario:  Create, Edit and Delete Salary Types
 
     When User click on the element in the leftNav class
       | humanResources |
@@ -31,20 +31,24 @@ Feature: Create and Delete Functionality for SubjectCategories
       | userTypeRandom |
       | saveButton     |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-      | Group3NewSalaryType | editedNewSalaryType |
+    Then User edit "Group3NewSalaryType"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | name | editedNewSalaryType |
 
-    When User delete value
-      | editedNewSalaryType |
+    And User click on the element in the dialog content class
+      | cancelUserType |
+      | userType       |
+      | randomSelect |
+      | saveButton     |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
+
+    When User delete "editedNewSalaryType"
+
+    Then User should see "successfully" message
 
 
   Scenario:  Create, Edit and Delete Salary Modifiers
@@ -66,30 +70,34 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryModifiers |
 
-    Then User edit the element with value
-      | cocukYardimi | editedcocukYardimi |
+    Then User edit "cocukYardimi"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | description  | editedcocukYardimi |
+      | variable     | ecck               |
+      | priority     | 13                 |
+      | amount       | 300                |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryModifiers |
 
-    When User delete value
-      | editedcocukYardimi |
+    When User delete "editedcocukYardimi"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
 
   Scenario:  Create, Edit and Delete Salary Constants
@@ -112,27 +120,32 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryConstants |
 
-    Then User edit the element with value
-      | isim | editedisim |
+    Then User edit "isim"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | nameConstans  | editedisim       |
+#      TODO Alttaki tarihe çift tıklamak gerekiyor.
+      | validform     | 11/10/2011 |
+      | key           | a12        |
+      | valueConstans | 100        |
+
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
 
     When User click on the element in the leftNav class
       | humanResources  |
       | setupHR         |
       | salaryConstants |
 
-    When User delete value
-      | editedisim |
+    When User delete "editedisim"
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message

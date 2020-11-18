@@ -20,7 +20,7 @@ public class DialogContent extends _Parent{
     @FindBy(linkText = "Got it!")    private WebElement gotItButton;
     @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
     @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
-   // @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")    private WebElement addButton;
+//    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE')]//button")    private WebElement addButton;
     @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]//button")    private WebElement addButton;
 
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;

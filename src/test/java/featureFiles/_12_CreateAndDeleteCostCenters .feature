@@ -46,17 +46,23 @@ Feature: Create and Delete Functionality for Cost Centers
       | addButtonCost |
       | saveButton |
 
-    Then User should see success/error message
-      | successfully |
+    Then User should see "successfully" message
 
-    Then User edit the element with value
-      | Grup3CostCenters | edit3NewCostCenters |
+    Then User edit "Grup3CostCenters"
 
-    Then User should see success/error message
-      | successfully |
+    And User sending the keys in the dialog content class
+      | name | edit3NewCostCenters |
+      | code | 123              |
 
-    When User delete value
-      | edit3NewCostCenters |
+    And User click on the element in the dialog content class
+      | type         |
+      | randomSelect |
 
-    Then User should see success/error message
-      | successfully |
+    And User click on the element in the dialog content class
+      | saveButton |
+
+    Then User should see "successfully" message
+
+    When User delete "edit3NewCostCenters"
+
+    Then User should see "successfully" message
