@@ -20,8 +20,8 @@ public class DialogContent extends _Parent{
     @FindBy(linkText = "Got it!")    private WebElement gotItButton;
     @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
     @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
-//    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE')]//button")    private WebElement addButton;
-    @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]//button")    private WebElement addButton;
+    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE')]//button")    private WebElement addButton;
+    // @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]")    private WebElement addButton;
 
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
@@ -50,6 +50,8 @@ public class DialogContent extends _Parent{
     @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
     @FindBy (css = " button[aria-label='Close dialog']")    private WebElement closeDialog;
+    @FindBy (xpath = "td[aria-label='November 11, 2020']") private WebElement selectDate;
+
 
 
     //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
@@ -92,6 +94,9 @@ public class DialogContent extends _Parent{
             case "addButtonCost": myElement = addButtonCost; break;
             case "styleSubjects": myElement = styleSubjects; break;
             case "closeDialog": myElement = closeDialog; break;
+            case "validFrom": myElement = validFrom; break;
+            case "selectDate": myElement = selectDate; break;
+
 
 
 
@@ -114,12 +119,11 @@ public class DialogContent extends _Parent{
             case "password": myElement = password; break;
             case "name": myElement = name; break;
             case "code": myElement = code; break;
-            case "discription": myElement = description; break;
+            case "description": myElement = description; break;
             case "variable": myElement = variable; break;
             case "priority": myElement = priority; break;
             case "amount": myElement = amount; break;
             case "nameConstans": myElement = nameConstans; break;
-            case "validFrom": myElement = validFrom; break;
             case "key": myElement = key; break;
             case "valueConstans": myElement = valueConstans; break;
             case "orderNo": myElement = orderNo; break;

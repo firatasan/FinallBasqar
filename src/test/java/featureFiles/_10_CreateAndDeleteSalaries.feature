@@ -27,9 +27,9 @@ Feature: Create and Delete Functionality for SubjectCategories
       | name | Group3NewSalaryType |
 
     And User click on the element in the dialog content class
-      | userType       |
-      | userTypeRandom |
-      | saveButton     |
+      | userType     |
+      | randomSelect |
+      | saveButton   |
 
     Then User should see "successfully" message
 
@@ -39,10 +39,7 @@ Feature: Create and Delete Functionality for SubjectCategories
       | name | editedNewSalaryType |
 
     And User click on the element in the dialog content class
-      | cancelUserType |
-      | userType       |
-      | randomSelect |
-      | saveButton     |
+      | saveButton |
 
     Then User should see "successfully" message
 
@@ -80,10 +77,10 @@ Feature: Create and Delete Functionality for SubjectCategories
     Then User edit "cocukYardimi"
 
     And User sending the keys in the dialog content class
-      | description  | editedcocukYardimi |
-      | variable     | ecck               |
-      | priority     | 13                 |
-      | amount       | 300                |
+      | description | editedcocukYardimi |
+      | variable    | ecck               |
+      | priority    | 13                 |
+      | amount      | 300                |
 
     And User click on the element in the dialog content class
       | saveButton |
@@ -109,11 +106,12 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     And User click on the element in the dialog content class
       | addButton |
+      | validFrom |
+      | selectDate |
 
+    #      TODO Alttaki tarihe çift tıklamak gerekiyor.
     And User sending the keys in the dialog content class
       | nameConstans  | isim       |
-#      TODO Alttaki tarihe çift tıklamak gerekiyor.
-      | validform     | 11/10/2011 |
       | key           | a12        |
       | valueConstans | 100        |
 
@@ -130,9 +128,9 @@ Feature: Create and Delete Functionality for SubjectCategories
     Then User edit "isim"
 
     And User sending the keys in the dialog content class
-      | nameConstans  | editedisim       |
+      | nameConstans  | editedisim |
 #      TODO Alttaki tarihe çift tıklamak gerekiyor.
-      | validform     | 11/10/2011 |
+      | validFrom     | 11/10/2011 |
       | key           | a12        |
       | valueConstans | 100        |
 

@@ -24,7 +24,7 @@ public class _Parent {
     public void clickFunction(WebElement element) {
 
         waitUntilClickable(element);
-         scrollToElemenet(element);
+         //scrollToElemenet(element);
         element.click();
 
     }
@@ -32,7 +32,7 @@ public class _Parent {
     public void sendKeysFunction(WebElement element, String value){
 
         waitUntilVisible(element);
-         scrollToElemenet(element);
+         //scrollToElemenet(element);
         element.clear();
         element.sendKeys(value);
 
