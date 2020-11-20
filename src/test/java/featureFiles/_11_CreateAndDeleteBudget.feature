@@ -23,7 +23,7 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | addButton |
 
     And User sending the keys in the dialog content class
-      | code | 123       |
+      | code | Group3       |
       | name | Group3Asd |
 
     And User click on the element in the dialog content class
@@ -55,18 +55,20 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | codeAcc | 1010 |
 
     And User click on the element in the dialog content class
-      | maximizes    |
       | budgetType   |
-      | randomSelect |
-      | balanceType  |
-      | randomSelect |
+      | Current      |
+      | balanceType2 |
+      | Debit        |
+      | maximizes    |
 
     And User sending the keys in the dialog content class
-      | order       | 4      |
+      | order | 4 |
+
+    And User sending the keys List in the dialog content class
       | formulaList | Formul |
 
     And User click on the element in the dialog content class
-      | addContraAcc |
+      | addButtonContAcc |
       | saveButton   |
 
     Then User should see "successfully" message

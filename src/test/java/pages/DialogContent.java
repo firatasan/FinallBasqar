@@ -76,7 +76,8 @@ public class DialogContent extends _Parent{
     @FindBy(xpath = "//span[text()='State']") private WebElement state;
     @FindBy(xpath = "//*[text()='Contra Account']") private WebElement contraAcc;
     @FindBy(css = "input[formcontrolname='account']") private WebElement codeAcc;
-
+    @FindBy (xpath = "(//mat-select[@formcontrolname='balanceType'])[2]") private WebElement balanceType2;
+    @FindBy (xpath = "(//button[@matbadgecolor='accent'])[4]") private WebElement addButtonContAcc;
 
 
     public void findElementAndClickFunction(String elementName) {
@@ -111,8 +112,10 @@ public class DialogContent extends _Parent{
             case "saveFormula": myElement = saveFormula; break;
             case "maximizes": myElement = maximizes;break;
             case "state": myElement = state;break;
-            case "contraAcc": myElement = contraAcc;break;
             case "addContraAcc": myElement = addContraAcc;break;
+            case "balanceType2": myElement = balanceType2;break;
+            case "contraAcc": myElement = contraAcc;break;
+            case "addButtonContAcc": myElement = addButtonContAcc;break;
 
             default:
                 for (int i = optionsList.size()-1; i >=0  ; i--) {
