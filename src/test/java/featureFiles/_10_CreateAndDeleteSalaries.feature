@@ -107,42 +107,53 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | addButton |
       | validFrom |
-      | selectDate |
 
-    #      TODO Alttaki tarihe çift tıklamak gerekiyor.
     And User sending the keys in the dialog content class
-      | nameConstans  | isim       |
-      | key           | a12        |
-      | valueConstans | 100        |
+      | validFrom | 12/11/2018 |
+
+    And User click on the element in the dialog content class
+      | closeDate |
+
+    And User sending the keys in the dialog content class
+      | nameConstans  | isim |
+      | key           | a12  |
+      | valueConstans | 100  |
 
     And User click on the element in the dialog content class
       | saveButton |
 
     Then User should see "successfully" message
 
-    When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryConstants |
+#    When User click on the element in the leftNav class
+#      | humanResources  |
+#      | setupHR         |
+#      | salaryConstants |
 
     Then User edit "isim"
 
+    And User click on the element in the dialog content class
+      | validFrom |
+
+    And User sending the keys in the dialog content class
+      | validFrom | 11/02/2020 |
+
+    And User click on the element in the dialog content class
+      | closeDate |
+
     And User sending the keys in the dialog content class
       | nameConstans  | editedisim |
-#      TODO Alttaki tarihe çift tıklamak gerekiyor.
-      | validFrom     | 11/10/2011 |
-      | key           | a12        |
-      | valueConstans | 100        |
+      | key           | a13        |
+      | valueConstans | 200        |
 
     And User click on the element in the dialog content class
       | saveButton |
 
     Then User should see "successfully" message
 
-    When User click on the element in the leftNav class
-      | humanResources  |
-      | setupHR         |
-      | salaryConstants |
+#    When User click on the element in the leftNav class
+#      | humanResources  |
+#      | setupHR         |
+#      | salaryConstants |
 
     When User delete "editedisim"
 

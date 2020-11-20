@@ -20,8 +20,8 @@ public class DialogContent extends _Parent{
     @FindBy(linkText = "Got it!")    private WebElement gotItButton;
     @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
     @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
-    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE')]//button")    private WebElement addButton;
-    // @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]")    private WebElement addButton;
+//    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE')]//button")    private WebElement addButton;
+     @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]")    private WebElement addButton;
 
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
@@ -51,8 +51,7 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
     @FindBy (css = " button[aria-label='Close dialog']")    private WebElement closeDialog;
     @FindBy (xpath = "td[aria-label='November 11, 2020']") private WebElement selectDate;
-
-
+    @FindBy (css = "div.cdk-overlay-container")    private WebElement closeDate;
 
     //Todo Not: buradan sonra category option ile secilecek, secimde general cıkarsa yeni bir drop down oluşuyor.
     // Yeni dropdown için aşağıdaki locator geliyor.
@@ -96,8 +95,7 @@ public class DialogContent extends _Parent{
             case "closeDialog": myElement = closeDialog; break;
             case "validFrom": myElement = validFrom; break;
             case "selectDate": myElement = selectDate; break;
-
-
+            case "closeDate": myElement = closeDate; break;
 
 
             default:
@@ -107,7 +105,6 @@ public class DialogContent extends _Parent{
                         myElement = optionsList.get(i);break;
                     }
                 }
-
 
         }
         clickFunction(myElement);
