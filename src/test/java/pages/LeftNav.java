@@ -44,6 +44,9 @@ public class LeftNav extends _Parent {
     @FindBy(xpath = "//span[text()='Cost Centers']") private WebElement costCenters;
 
 
+    //   //button[@aria-label='Close dialog']
+
+
     public void findElementAndClickFunction(String elementName) {
 
         switch (elementName) {
@@ -69,6 +72,7 @@ public class LeftNav extends _Parent {
             case "budgetAccounts": myElement = budgetAccounts;break;
             case "setupBudget": myElement = setupBudget;break;
             case "costCenters": myElement = costCenters;break;
+
 
         }
         clickFunction(myElement);

@@ -15,12 +15,12 @@ public class Driver {
 
             // System.SetProperty'nin karşılığı olarak projeyi chromedriver'la
             // çalışacak şekilde buraya kurmuş olduk
-            WebDriverManager.chromedriver().setup();  // System.SetProperty nin karsılıgı
-            driver=new ChromeDriver();
+//            WebDriverManager.chromedriver().setup();  // System.SetProperty nin karsılıgı
+//            driver=new ChromeDriver();
 
             //Firefox için ise;
-//            WebDriverManager.firefoxdriver().setup();
-//             driver=new FirefoxDriver();
+            WebDriverManager.firefoxdriver().setup();
+             driver=new FirefoxDriver();
 
         }
 

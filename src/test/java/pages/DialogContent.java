@@ -22,7 +22,7 @@ public class DialogContent extends _Parent{
     @FindAll({@FindBy(linkText = "Got it!") })   private List<WebElement> gotItBtns;
     @FindBy (xpath = "//span[text()='Dashboard ']")  private WebElement dashboard;
 //    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'TITLE')]//button")    private WebElement addButton;
-     @FindBy (xpath = " //ms-add-button[contains(@tooltip,'.ADD')]")    private WebElement addButton;
+     @FindBy (xpath = "//ms-add-button[contains(@tooltip,'.ADD')]")    private WebElement addButton;
 
     @FindBy (css = "ms-text-field[formcontrolname='name']>input")    private WebElement name;
     @FindBy (css = "ms-text-field[formcontrolname='code']>input")    private WebElement code;
@@ -63,7 +63,7 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
     @FindBy (css = "mat-select[formcontrolname='currency']") private WebElement currency;
     @FindBy (xpath = "(//button[@matbadgecolor='accent'])[2]") private WebElement addContraAcc;
-    @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
+    @FindBy (css = "input[formcontrolname='order']") private WebElement order;
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
     @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
     @FindBy (css = "mat-select[formcontrolname='value']") private WebElement styleSubjects;
@@ -72,6 +72,11 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "//ms-add-button[contains(@tooltip,'.BUTTON')]//button")    private WebElement addFormula;
     @FindBy (css = "mat-select[formcontrolname='budgetType']")    private WebElement budgetType;
     @FindBy(xpath = "(//ms-save-button//button)[2]")   private WebElement saveFormula;
+    @FindBy(css = "svg[data-icon='window-maximize']") private WebElement maximizes;
+    @FindBy(xpath = "//span[text()='State']") private WebElement state;
+    @FindBy(xpath = "//*[text()='Contra Account']") private WebElement contraAcc;
+    @FindBy(css = "input[formcontrolname='account']") private WebElement codeAcc;
+
 
 
     public void findElementAndClickFunction(String elementName) {
@@ -104,6 +109,10 @@ public class DialogContent extends _Parent{
             case "addFormula": myElement = addFormula; break;
             case "budgetType": myElement = budgetType; break;
             case "saveFormula": myElement = saveFormula; break;
+            case "maximizes": myElement = maximizes;break;
+            case "state": myElement = state;break;
+            case "contraAcc": myElement = contraAcc;break;
+            case "addContraAcc": myElement = addContraAcc;break;
 
             default:
                 for (int i = optionsList.size()-1; i >=0  ; i--) {
@@ -130,9 +139,10 @@ public class DialogContent extends _Parent{
             case "nameConstans": myElement = nameConstans; break;
             case "key": myElement = key; break;
             case "valueConstans": myElement = valueConstans; break;
-            case "orderNo": myElement = orderNo; break;
+            case "order": myElement = order; break;
             case "shortName": myElement = shortName; break;
             case "namePositionSalary": myElement = namePositionSalary; break;
+            case "codeAcc": myElement = codeAcc; break;
 
 
 
