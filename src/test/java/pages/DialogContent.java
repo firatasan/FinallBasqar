@@ -71,7 +71,7 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "//*[text()='Formula']")    private WebElement formula;
     @FindBy (xpath = "//ms-add-button[contains(@tooltip,'.BUTTON')]//button")    private WebElement addFormula;
     @FindBy (css = "mat-select[formcontrolname='budgetType']")    private WebElement budgetType;
-
+    @FindBy(xpath = "(//ms-save-button//button)[2]")   private WebElement saveFormula;
 
 
     public void findElementAndClickFunction(String elementName) {
@@ -103,7 +103,7 @@ public class DialogContent extends _Parent{
             case "formula": myElement = formula; break;
             case "addFormula": myElement = addFormula; break;
             case "budgetType": myElement = budgetType; break;
-
+            case "saveFormula": myElement = saveFormula; break;
 
             default:
                 for (int i = optionsList.size()-1; i >=0  ; i--) {
