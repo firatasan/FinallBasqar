@@ -42,7 +42,7 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | formulaList |JAN|
 
     And User click on the element in the dialog content class
-      | saveButton |
+      | saveFormula |
 
     Then User should see "successfully" message
 
