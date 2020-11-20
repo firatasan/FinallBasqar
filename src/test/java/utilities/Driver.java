@@ -19,8 +19,8 @@ public class Driver {
             driver=new ChromeDriver();
 
             //Firefox için ise;
-            //WebDriverManager.firefoxdriver().setup();
-            // driver=new FirefoxDriver();
+//            WebDriverManager.firefoxdriver().setup();
+//             driver=new FirefoxDriver();
 
         }
 

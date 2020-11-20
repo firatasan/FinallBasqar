@@ -11,6 +11,7 @@ import java.util.List;
 public class DialogContent extends _Parent{
 
     WebElement myElement;
+    List<WebElement> myList;
 
     public DialogContent() { PageFactory.initElements(driver, this); }
 
@@ -47,7 +48,7 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "(//input[@type='text'])[1]")    private WebElement key;
     @FindBy (xpath = "(//input[@type='text'])[2]")    private WebElement valueConstans;
     @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
-    @FindAll({ @FindBy (css = "input[name*='Formula']") })  private List<WebElement> formulaList;
+    @FindAll({ @FindBy (css = "input[name*='Formula']") })  public List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
     @FindBy (css = " button[aria-label='Close dialog']")    private WebElement closeDialog;
     @FindBy (xpath = "td[aria-label='November 11, 2020']") private WebElement selectDate;
@@ -60,13 +61,16 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "//span[text()='Type']") private WebElement type;
     @FindBy (xpath = "//span[text()='Balance Type']") private WebElement balanceType;
     @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
-    @FindBy (xpath = "//span[text()='Currency']") private WebElement currency;
+    @FindBy (css = "mat-select[formcontrolname='currency']") private WebElement currency;
     @FindBy (xpath = "(//button[@matbadgecolor='accent'])[2]") private WebElement addContraAcc;
     @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
     @FindBy (css = "input[placeholder='Expense accout code prefixes']")    private WebElement expenseAccPrefixes;
     @FindBy (xpath = "//span[text()='Add']") private WebElement addButtonCost;
     @FindBy (css = "mat-select[formcontrolname='value']") private WebElement styleSubjects;
     @FindBy(css = "ms-text-field[formcontrolname='shortName']>input")    private WebElement shortName;
+    @FindBy (xpath = "//*[text()='Formula']")    private WebElement formula;
+    @FindBy (xpath = "//ms-add-button[contains(@tooltip,'.BUTTON')]//button")    private WebElement addFormula;
+    @FindBy (css = "mat-select[formcontrolname='budgetType']")    private WebElement budgetType;
 
 
 
@@ -96,6 +100,9 @@ public class DialogContent extends _Parent{
             case "validFrom": myElement = validFrom; break;
             case "selectDate": myElement = selectDate; break;
             case "closeDate": myElement = closeDate; break;
+            case "formula": myElement = formula; break;
+            case "addFormula": myElement = addFormula; break;
+            case "budgetType": myElement = budgetType; break;
 
 
             default:
@@ -126,6 +133,7 @@ public class DialogContent extends _Parent{
             case "orderNo": myElement = orderNo; break;
             case "shortName": myElement = shortName; break;
             case "namePositionSalary": myElement = namePositionSalary; break;
+
 
 
         }
@@ -170,6 +178,22 @@ public class DialogContent extends _Parent{
                 break;
             }
         }
+    }
+
+    public void findElementListAndSendKeysFunction(String list,String value){
+
+        switch (list) {
+            case "formulaList":
+                myList = formulaList;
+                break;
+        }
+
+        for (int i = 0; i <myList.size() ; i++) {
+
+            sendKeysFunction(myList.get(i), value);
+
+        }
+
     }
 
 

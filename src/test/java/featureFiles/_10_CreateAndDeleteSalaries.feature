@@ -124,11 +124,6 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     Then User should see "successfully" message
 
-#    When User click on the element in the leftNav class
-#      | humanResources  |
-#      | setupHR         |
-#      | salaryConstants |
-
     Then User edit "isim"
 
     And User click on the element in the dialog content class
@@ -149,11 +144,6 @@ Feature: Create and Delete Functionality for SubjectCategories
       | saveButton |
 
     Then User should see "successfully" message
-
-#    When User click on the element in the leftNav class
-#      | humanResources  |
-#      | setupHR         |
-#      | salaryConstants |
 
     When User delete "editedisim"
 

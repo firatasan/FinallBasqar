@@ -34,12 +34,12 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | currency    |
       | EUR         |
       | formula     |
-      | addButton   |
+      | addFormula   |
       | budgetType  |
       | current     |
 
-    And User sending the keys in the dialog content class
-      | formulaList | JAN |
+    And User sending the keys List in the dialog content class
+      | formulaList |JAN|
 
     And User click on the element in the dialog content class
       | saveButton |
