@@ -73,12 +73,14 @@ public class DialogContent extends _Parent{
     @FindBy (css = "mat-select[formcontrolname='budgetType']")    private WebElement budgetType;
     @FindBy(xpath = "(//ms-save-button//button)[2]")   private WebElement saveFormula;
     @FindBy(css = "svg[data-icon='window-maximize']") private WebElement maximizes;
-    @FindBy(xpath = "//*[text()='Contra Account']") private WebElement contraAcc;
+//    @FindBy(xpath = "//*[text()='Contra Account']") private WebElement contraAcc;
+    @FindBy (xpath = "(//mat-expansion-panel-header[@role='button']/span)[3]")    private WebElement contraAcc;
     @FindBy(css = "input[formcontrolname='account']") private WebElement codeAcc;
     @FindBy (xpath = "(//mat-select[@formcontrolname='balanceType'])[2]") private WebElement balanceType2;
     @FindBy (xpath = "(//button[@matbadgecolor='accent'])[4]") private WebElement addButtonContAcc;
     @FindBy (xpath = "(//mat-select[role='combobox'])[4]") private WebElement codeBudget;
     @FindBy (xpath = "//span[text()=' Search ']") private WebElement search;
+    @FindBy(css = "input.mat-input-element.mat-form-field-autofill-control") WebElement searchName;
 
 
 
@@ -149,6 +151,7 @@ public class DialogContent extends _Parent{
             case "namePositionSalary": myElement = namePositionSalary; break;
             case "codeAcc": myElement = codeAcc; break;
             case "codeBudget": myElement = codeBudget; break;
+            case "searchName": myElement = searchName; break;
 
 
 

@@ -28,7 +28,6 @@ public class _02_CountrySteps {
             System.out.println(elementList.get(i));
             leftNav.findElementAndClickFunction(elementList.get(i));
         }
-
     }
 
 

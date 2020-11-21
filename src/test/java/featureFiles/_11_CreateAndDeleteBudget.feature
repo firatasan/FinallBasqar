@@ -23,7 +23,7 @@ Feature: Create and Delete Functionality for BudgetAccounts
       | addButton |
 
     And User sending the keys in the dialog content class
-      | code | group    |
+      | code | 2.1.19  |
       | name | Group3A |
 
     And User click on the element in the dialog content class
@@ -74,16 +74,16 @@ Feature: Create and Delete Functionality for BudgetAccounts
     Then User should see "successfully" message
 
     When User click on the element in the leftNav class
-      | budget          |
-      | budgetAccounts  |
+      | budget         |
+      | budgetAccounts |
 
     And User sending the keys in the dialog content class
-      | codeBudget | group |
+      | searchName | Group3A |
 
-    When User click on the element in the leftNav class
-      | search          |
+    And User click on the element in the dialog content class
+      | search |
 
-    Then User edit "Group3Asd"
+    Then User edit "Group3A"
 
     And User sending the keys in the dialog content class
       | name | Group3NewAsd |
@@ -96,6 +96,12 @@ Feature: Create and Delete Functionality for BudgetAccounts
     When User click on the element in the leftNav class
       | budget         |
       | budgetAccounts |
+
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewAsd |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "Group3NewAsd"
 
