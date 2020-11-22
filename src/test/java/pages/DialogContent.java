@@ -45,8 +45,8 @@ public class DialogContent extends _Parent{
     @FindBy (css = "input[data-placeholder='Amount']")    private WebElement amount;
     @FindBy (css = "input[formcontrolname='name']")    private WebElement nameConstans;
     @FindBy (css = "input[data-placeholder='Valid From']")    private WebElement validFrom;
-    @FindBy (xpath = "(//input[@type='text'])[1]")    private WebElement key;
-    @FindBy (xpath = "(//input[@type='text'])[2]")    private WebElement valueConstans;
+    @FindBy (css = "ms-text-field[formcontrolname='key']>input") private WebElement key;
+    @FindBy (css = "*[formcontrolname='value']>input") private WebElement valueConstans;
     @FindBy (css = "ms-text-field[formcontrolname='title']>input")    private WebElement namePositionSalary;
     @FindAll({ @FindBy (css = "input[name*='Formula']") })  public List<WebElement> formulaList;
     @FindBy (xpath = "//span[text()='Category']") private WebElement category;
@@ -58,7 +58,7 @@ public class DialogContent extends _Parent{
     // Yeni dropdown için aşağıdaki locator geliyor.
     //@FindBy (xpath = "//span[text()='Subcategory']") private WebElement subjectCategory;
     @FindBy (css = "mat-select[formcontrolname='id']") private WebElement subjectCategory;
-    @FindBy (xpath = "//span[text()='Type']") private WebElement type;
+    @FindBy (css = "mat-select[formcontrolname='type']") private WebElement type;
     @FindBy (xpath = "//span[text()='Balance Type']") private WebElement balanceType;
     @FindBy (xpath = "//span[text()='Integration Codes']") private WebElement integrationCodes;
     @FindBy (css = "mat-select[formcontrolname='currency']") private WebElement currency;
@@ -80,7 +80,11 @@ public class DialogContent extends _Parent{
     @FindBy (xpath = "(//button[@matbadgecolor='accent'])[4]") private WebElement addButtonContAcc;
     @FindBy (xpath = "(//mat-select[role='combobox'])[4]") private WebElement codeBudget;
     @FindBy (xpath = "//span[text()=' Search ']") private WebElement search;
-    @FindBy(css = "input.mat-input-element.mat-form-field-autofill-control") WebElement searchName;
+    @FindBy(css = "input.mat-input-element.mat-form-field-autofill-control")  WebElement searchName;
+
+    @FindBy (css = "ms-text-field[formcontrolname='orderNo']>input") private WebElement orderNo;
+    @FindBy (xpath = "//mat-icon[text()='cancel']")    private WebElement cancelExpenseAccPrefixes;
+    @FindBy (css = "div[aria-posinset='2']")    private WebElement tabConstants;
 
 
 
@@ -120,6 +124,7 @@ public class DialogContent extends _Parent{
             case "contraAcc": myElement = contraAcc;break;
             case "addButtonContAcc": myElement = addButtonContAcc;break;
             case "search": myElement = search;break;
+            case "tabConstants": myElement = tabConstants;break;
 
             default:
                 for (int i = optionsList.size()-1; i >=0  ; i--) {
@@ -152,8 +157,7 @@ public class DialogContent extends _Parent{
             case "codeAcc": myElement = codeAcc; break;
             case "codeBudget": myElement = codeBudget; break;
             case "searchName": myElement = searchName; break;
-
-
+            case "orderNo": myElement = orderNo; break;
 
         }
         sendKeysFunction(myElement, value);
