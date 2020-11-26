@@ -4,6 +4,9 @@ import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import utilities.Driver;
 
 @CucumberOptions
         (
@@ -13,6 +16,14 @@ import org.testng.annotations.AfterClass;
                 plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportRegression.html"}
         )
 public class _01_ExtendReport extends AbstractTestNGCucumberTests {
+
+    @BeforeClass
+    @Parameters("browser")
+    public static void beforeClass(String browser){
+        Driver.threadBrowserName.set(browser);
+
+
+    }
 
    @AfterClass
     public static void afterClass(){

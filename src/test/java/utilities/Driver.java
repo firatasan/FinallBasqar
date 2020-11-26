@@ -14,22 +14,23 @@ public class Driver {
     {
         if (threadBrowserName.get()==null)
         {
-            threadBrowserName.set("chrome");
+            threadBrowserName.set("firefox");
         }
 
         if (threadDriver.get() == null)
         {
             switch (threadBrowserName.get())
             {
-                case "firefox":
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    threadDriver.set( new ChromeDriver() );
+                    break;
+
+                default:
                     WebDriverManager.firefoxdriver().setup();
                     threadDriver.set( new FirefoxDriver() );
                     break;
 
-                default:
-                    WebDriverManager.chromedriver().setup();
-                    threadDriver.set( new ChromeDriver() );
-                    break;
 
             }
         }

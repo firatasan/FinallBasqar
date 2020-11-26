@@ -23,9 +23,15 @@ public class _Parent {
     }
 
     public void clickFunction(WebElement element) {
-    waitUntilClickable(element);
-    scrollToElemenet(element);
-    element.click();
+    try {
+        waitUntilClickable(element);
+        scrollToElemenet(element);
+        element.click();
+    }catch (StaleElementReferenceException ex){
+        ex.printStackTrace();
+        clickFunction(element);
+    }
+
 
     }
 
