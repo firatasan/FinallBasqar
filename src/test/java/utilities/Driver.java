@@ -7,34 +7,46 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
 
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> threadDriver =new ThreadLocal<>();
+    public static ThreadLocal<String> threadBrowserName= new ThreadLocal<>();
 
-    public static WebDriver getDriver(){
-
-        if(driver==null){
-
-            // System.SetProperty'nin karşılığı olarak projeyi chromedriver'la
-            // çalışacak şekilde buraya kurmuş olduk
-//            WebDriverManager.chromedriver().setup();  // System.SetProperty nin karsılıgı
-//            driver=new ChromeDriver();
-
-            //Firefox için ise;
-            WebDriverManager.firefoxdriver().setup();
-             driver=new FirefoxDriver();
-
+    public static WebDriver getDriver()
+    {
+        if (threadBrowserName.get()==null)
+        {
+            threadBrowserName.set("chrome");
         }
 
-        return driver;
-    }
+        if (threadDriver.get() == null)
+        {
+            switch (threadBrowserName.get())
+            {
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    threadDriver.set( new FirefoxDriver() );
+                    break;
 
-    public static void quitDriver(){
+                default:
+                    WebDriverManager.chromedriver().setup();
+                    threadDriver.set( new ChromeDriver() );
+                    break;
 
-        if(driver!=null) {
-            driver.quit();
-            driver = null;
+            }
         }
-
+        return threadDriver.get();
     }
+
+    public static void quitDriver()
+    {
+        if (threadDriver.get() != null)
+        {
+            threadDriver.get().quit();
+            WebDriver driver=threadDriver.get();
+            driver=null;
+            threadDriver.set(driver);
+        }
+    }
+
 
 
 }
