@@ -22,7 +22,6 @@ public class _01_ExtendReport extends AbstractTestNGCucumberTests {
     public static void beforeClass(String browser){
         Driver.threadBrowserName.set(browser);
 
-
     }
 
    @AfterClass

@@ -1,4 +1,4 @@
-Feature: Create and Delete Functionality for SubjectCategories
+Feature: Create and Delete Functionality for Human Resources
 
   Background:
     Given Navigate to basqar
@@ -33,6 +33,12 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewSalaryType |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "Group3NewSalaryType"
 
     And User sending the keys in the dialog content class
@@ -42,6 +48,12 @@ Feature: Create and Delete Functionality for SubjectCategories
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | editedNewSalaryType |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedNewSalaryType"
 
@@ -74,6 +86,12 @@ Feature: Create and Delete Functionality for SubjectCategories
       | setupHR         |
       | salaryModifiers |
 
+    And User sending the keys in the dialog content class
+      | description | cocukYardimi |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "cocukYardimi"
 
     And User sending the keys in the dialog content class
@@ -91,6 +109,12 @@ Feature: Create and Delete Functionality for SubjectCategories
       | humanResources  |
       | setupHR         |
       | salaryModifiers |
+
+    And User sending the keys in the dialog content class
+      | description | editedcocukYardimi |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedcocukYardimi"
 
@@ -124,6 +148,12 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     Then User should see "successfully" message
 
+    And User sending the keys in the dialog content class
+      | searchName | isim |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "isim"
 
     And User click on the element in the dialog content class
@@ -144,6 +174,12 @@ Feature: Create and Delete Functionality for SubjectCategories
       | saveButton |
 
     Then User should see "successfully" message
+
+    And User sending the keys in the dialog content class
+      | searchName | editedisim |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "editedisim"
 

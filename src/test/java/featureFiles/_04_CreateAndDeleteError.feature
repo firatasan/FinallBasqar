@@ -51,6 +51,12 @@ Feature: Create and Delete Functionality for Countries and Cities
     When User click on the element in the leftNav class
       | countries |
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3Country5 |
+
+    And User click on the element in the dialog content class
+      | search |
+
     When User delete "Group3Country5"
 
     Then User should see "error" message
@@ -59,10 +65,18 @@ Feature: Create and Delete Functionality for Countries and Cities
       #    ilave kısım
     Then User click on the element in the leftNav class
       | cities |
+    And User sending the keys in the dialog content class
+      | searchName | Group3City5 |
+    And User click on the element in the dialog content class
+      | search |
     When User delete "Group3City5"
     Then User should see "successfully" message
     Then User click on the element in the leftNav class
       | countries |
+    And User sending the keys in the dialog content class
+      | searchName | Group3Country5 |
+    And User click on the element in the dialog content class
+      | search |
     When User delete "Group3Country5"
     Then User should see "successfully" message
 

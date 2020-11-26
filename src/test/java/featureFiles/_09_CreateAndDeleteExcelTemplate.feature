@@ -34,6 +34,12 @@ Feature: Create and Delete Functionality for SubjectCategories
     And User click on the element in the dialog content class
       | closeDialog |
 
+    And User sending the keys in the dialog content class
+      | searchName | Group3NewExcelTemplete |
+
+    And User click on the element in the dialog content class
+      | search |
+
     Then User edit "Group3NewExcelTemplete"
 
     And User sending the keys in the dialog content class
@@ -46,6 +52,12 @@ Feature: Create and Delete Functionality for SubjectCategories
 
     And User click on the element in the dialog content class
       | closeDialog |
+
+    And User sending the keys in the dialog content class
+      | searchName | Group3EditedExcelTemplete |
+
+    And User click on the element in the dialog content class
+      | search |
 
     When User delete "Group3EditedExcelTemplete"
 
