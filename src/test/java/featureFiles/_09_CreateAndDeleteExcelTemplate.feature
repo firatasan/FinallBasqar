@@ -1,4 +1,4 @@
-Feature: Create and Delete Functionality for SubjectCategories
+Feature: Create and Delete Functionality for Excel Template
 
   Background:
     Given Navigate to basqar

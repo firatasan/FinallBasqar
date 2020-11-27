@@ -1,4 +1,4 @@
-Feature: Create and Delete Functionality for Countries and Cities
+Feature: Create and Delete Functionality for Subject and Subject Category
 
   Background:
     Given Navigate to basqar

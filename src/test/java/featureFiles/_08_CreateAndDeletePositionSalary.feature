@@ -1,4 +1,4 @@
-Feature: Create and Delete Functionality for SubjectCategories
+Feature: Create and Delete Functionality for Position Salary and Positions
 
   Background:
     Given Navigate to basqar

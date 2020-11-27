@@ -15,7 +15,7 @@ import utilities.Driver;
                 dryRun = false,
                 plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportRegression.html"}
         )
-public class _01_ExtendReport extends AbstractTestNGCucumberTests {
+public class _01_ExtendReports extends AbstractTestNGCucumberTests {
 
     @BeforeClass
     @Parameters("browser")
@@ -27,7 +27,7 @@ public class _01_ExtendReport extends AbstractTestNGCucumberTests {
    @AfterClass
     public static void afterClass(){
        Reporter.loadXMLConfig("src/test/java/xmlFiles/extendReportSet.xml");
-       Reporter.setSystemInfo("User Name", "Gruop3");
+       Reporter.setSystemInfo("User Name", "Group3");
        Reporter.setSystemInfo("Application Name", "Basqar");
        Reporter.setSystemInfo("Operating System Info", System.getProperty("os.name"));
        Reporter.setSystemInfo("Department", "QA");

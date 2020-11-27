@@ -1,17 +1,17 @@
 <suite name="suit1"  parallel="tests" thread-count="2">
 
-    <test name="test1">
+    <test name="test1 with Chrome">
         <parameter name="browser" value="chrome"> </parameter>
         <classes>
-            <class name="runners._01_ExtendReport"> </class>
+            <class name="runners._01_ExtendReports"> </class>
         </classes>
     </test>
 
 
-    <test name="test2">
+    <test name="test2 with Firefox">
         <parameter name="browser" value="firefox"> </parameter>
         <classes>
-            <class name="runners._01_ExtendReport"> </class>
+            <class name="runners._01_ExtendReports"> </class>
         </classes>
     </test>
 
