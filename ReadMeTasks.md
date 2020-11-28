@@ -38,7 +38,7 @@ Tasks
     3.10)   Create a Human Resources > Setup > Salary Modifiers , edit the Salary Modifiers , delete the Salary Modifiers
             Create a Human Resources > Setup > Salary Constants , edit the Salary Constants , delete the Salary Constants
 
-    3.11)   Create a Budget > Setup > Budget Groups , edit the Budget Groups  , delete the Budget Groups
+    3.11)   Create a  Budget > Budget Accounts , edit the Budget Accounts , delete the Budget Accounts
     
     3.12)   Create a Budget > Setup > Cost Centers , edit the Cost Centers  , delete the Cost Centers
     
