@@ -2,8 +2,7 @@
 Group 3 Basqar Study/University Web Page Testing
 
 
-# FinallBasqar
-Group 3 Basqar Study/University Web Page Testing
+
 Thats a Basqar Study/Online University Web Page Test Project
 
 We have planed this project with my group (you can see group memmbers at the end of this page) on JIRA and we have controlled all working steps with jira and agile methodology.
