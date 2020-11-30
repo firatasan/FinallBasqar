@@ -32,7 +32,6 @@ public class _Parent {
         clickFunction(element);
     }
 
-
     }
 
     public void sendKeysFunction(WebElement element, String value){
